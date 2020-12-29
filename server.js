@@ -4,7 +4,7 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs')   //to render views
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
@@ -26,5 +26,4 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running..."));
+server.listen(5050);
