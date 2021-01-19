@@ -27,5 +27,4 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(5050, 
-	() => console.log("Server is running..."));
+server.listen(process.env.PORT || 5050,	() => console.log("Server is running..."));
