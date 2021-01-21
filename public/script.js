@@ -72,20 +72,6 @@ camera[0].onclick = function(evt){
   videoTrack[0].enabled = !(videoTrack[0].enabled);
 }
 
-/* var video_button = document.createElement("video_button");
-video_button.appendChild(document.createTextNode("Toggle hold"));
-
-video_button.video_onclick = function(){
-  myStream.getVideoTracks()[0].enabled = !(myStream.getVideoTracks()[0].enabled);
-}
-
-var audio_button = document.createElement("audio_button");
-video_button.appendChild(document.createTextNode("Toggle hold"));
-
-audio_button.audio_onclick = function(){
-  myStream.getAudioTracks()[0].enabled = !(myStream.getAudioTracks()[0].enabled);
-} */
-
 //, {
   //host: '/',
   //port: '5050'
