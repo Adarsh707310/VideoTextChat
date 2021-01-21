@@ -70,7 +70,6 @@ camera[0].onclick = function(evt){
   var videoTrack = myStream.getVideoTracks();
   console.log(videoTrack[0]);
   videoTrack[0].enabled = !(videoTrack[0].enabled);
-  
 }
 
 /* var video_button = document.createElement("video_button");
