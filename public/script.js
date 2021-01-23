@@ -100,6 +100,7 @@ screen_off[0].onclick = function(evt){
     .then(handleSuccess).then(screen_share_toggle)
   }
   else{
+    myVideo.srcObject.getTracks()[0].stop()
     myVideo.srcObject = myStream;
     screen_share_toggle()
   } 
