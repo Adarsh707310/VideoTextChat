@@ -5,6 +5,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 3px solid white;
 }
 
 #video-grid {
@@ -24,7 +25,7 @@ video {
 #video-opt{
   position: fixed;
   display: grid;
-  grid-template-columns:  auto 90px auto;
+  grid-template-columns:  45% 90px auto 300px;
   bottom:0px;
   height:90px;
   width: 100%;
@@ -33,6 +34,7 @@ video {
   right:0;
   align-items: center;
   transition-duration: 0.5s;
+  border-top: 5px solid white;
 }
 #video-opt img{
   width: auto;
@@ -85,4 +87,22 @@ video {
   height:55px;
   width:auto;
   content:url("/images/mic_off.png")
+}
+
+.screen_share{
+  font-size: 40px;
+  width:60px;
+  height: auto;
+  background-color: white;
+  color: black;
+  border-radius: 10%/25%;
+	border:5px solid #e01414;
+	display:inline-block;
+	cursor:pointer;
+	/*padding:25px 4px;*/
+  text-decoration:none;
+  padding-left: 20px;;
+}
+.screen_on{
+  border:5px solid #18d12b;
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="room.css">
+  <link rel="stylesheet" href="/css/line-icons.css">
   <script>
     const ROOM_ID = "<%= roomId %>"
   </script>
@@ -20,6 +21,7 @@
     <div class="mic"><img src="/images/mic_on.png" id="mic"></div>
     <div class="endCall"><a href="/"><img src="/images/end_call.png" id="endCall"></a></div>
     <div class="camera"><img src="images/cam_on.png" id="camera"></div>
+    <div class="lnr lnr-screen screen_share"></div>
   </div>
   </div>
   </div>
@@ -28,6 +30,6 @@
   <!-- <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>-->
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="script.js" defer></script>
-  <script defer src="effect.js"></script>
+  <script defer src="room_effect.js"></script>
 </body>
 </html>
