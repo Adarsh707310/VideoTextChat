@@ -72,6 +72,11 @@ camera[0].onclick = function(evt){
   videoTrack[0].enabled = !(videoTrack[0].enabled);
 }
 
+var endcall = document.getElementsByClassName("endCall");
+endcall[0].onclick = function(evt){
+  document.location.href="/"
+}
+
 /*Screen sharing functionality*/
 function handleSuccess(stream) {
 
