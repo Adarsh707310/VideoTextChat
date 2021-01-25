@@ -25,14 +25,27 @@ app.get('/:room', (req, res) => {
 })
 
 io.on('connection', socket => {
+  
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId)
     socket.to(roomId).broadcast.emit('user-connected', userId)
 
+    // Handle chat event
+    socket.on('chat', function(data){
+      // console.log(data);
+      io.sockets.emit('chat', data);
+    });
+
+    // Handle typing event
+    socket.on('typing', function(data){
+        socket.broadcast.emit('typing', data);
+    });
+
     socket.on('disconnect', () => {
       socket.to(roomId).broadcast.emit('user-disconnected', userId)
     })
+
   })
 })
 
-server.listen(process.env.PORT || 5050,	() => console.log("Server is running..."));
+server.listen(process.env.PORT || 5050, () => console.log("Server is running..."));
