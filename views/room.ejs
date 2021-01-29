@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="room.css">
+  <link rel="stylesheet" href="/css/line-icons.css">
   <script>
     const ROOM_ID = "<%= roomId %>"
   </script>
@@ -23,19 +24,19 @@
 <body>
   <div class='row'>
     <div class='col_stream'>
-      <div id="video-grid">
-      </div>
-      <div id="wrapper">
-        <div id="video-opt">
-          <!-- <div class="mic"><a>Mic On</a></div>
-          <div class="endCall"><img src="/images/end_call.png"></div>
-          <div class="camera"><a>Cam On</a></div> -->
-          <div class="mic"><img src="/images/mic_on.png" id="mic"></div>
-          <div class="endCall"><a href="/"><img src="/images/end_call.png" id="endCall"></a></div>
-          <div class="camera"><img src="images/cam_on.png" id="camera"></div>
-        </div>
-      </div>
-    </div>
+      <div id="video-grid"></div>
+  <div id="wrapper">
+  <div id="video-opt">
+     <!-- <div class="mic"><a>Mic On</a></div>
+    <div class="endCall"><img src="/images/end_call.png"></div>
+    <div class="camera"><a>Cam On</a></div> -->
+    <div class="lnr lnr-mic mic"></div>
+    <div class="lnr lnr-phone-handset endCall"></div>
+    <div class="lnr lnr-camera-video camera"></div>
+    <div class="lnr lnr-screen screen_share"></div>
+  </div>
+  </div>
+  </div>
     <div class='col_chat' style="background-color:#aaa;">
       <div id="mario-chat">
         <h2>Mario Chat</h2>
@@ -47,10 +48,7 @@
         <input id="message" type="text" placeholder="Message" />
         <button id="send">Send</button>
     </div>
-      <!--
-        <div id="includedChatFile"></div>
-      -->
-      </div>
+    </div>
     </div>
   
   <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
@@ -58,7 +56,7 @@
   <!-- <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>-->
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="script.js" defer></script>
-  <script defer src="effect.js"></script>
+  <script defer src="room_effect.js"></script>
 </body>
 
 </html>

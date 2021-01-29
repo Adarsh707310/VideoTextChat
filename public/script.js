@@ -106,6 +106,44 @@ socket.on('typing', function(data){
 });
 
 
+var endcall = document.getElementsByClassName("endCall");
+endcall[0].onclick = function(evt){
+  document.location.href="/"
+}
+
+/*Screen sharing functionality*/
+function handleSuccess(stream) {
+
+  myVideo.srcObject = stream;
+
+  // demonstrates how to detect that the user has stopped
+  // sharing the screen via the browser UI.
+  // ended is a event which is trigerred when stream is ended.
+  stream.getVideoTracks()[0].addEventListener('ended', () => { 
+    myVideo.srcObject = myStream;
+    screen_share_toggle()
+  });
+}
+
+function screen_share_toggle(){
+  const screen_share = document.getElementsByClassName("screen_share");
+  screen_share[0].classList.toggle("screen_on");
+}
+
+var screen_off = document.getElementsByClassName("screen_share");
+screen_off[0].onclick = function(evt){
+  var temp = window.getComputedStyle(screen_off[0]).borderColor;
+  //console.log(temp)
+  if(temp == "rgb(224, 20, 20)"){
+    navigator.mediaDevices.getDisplayMedia({video: true})
+    .then(handleSuccess).then(screen_share_toggle)
+  }
+  else{
+    myVideo.srcObject.getTracks()[0].stop()
+    myVideo.srcObject = myStream;
+    screen_share_toggle()
+  } 
+}
 
 //, {
   //host: '/',
